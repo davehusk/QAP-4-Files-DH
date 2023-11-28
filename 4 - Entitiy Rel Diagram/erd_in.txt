@@ -1,0 +1,47 @@
+Layout
+
+Tim Horton's
+  - Customer Service
+  - Financials
+  - Infrastructure
+Motel
+  - Customer Service
+  - Financials
+  - Infrastructure
+Steak House
+  - Customer Service
+  - Financials
+  - Infrastructure
+
+
+Defaults (STDef.dat)
+- variables
+  Customer
+    - invoice number = 1856
+  Revenue 
+    - room rate = 75.00
+    - hst = 15%
+    - early check in = 12.00
+    - extra bed = 7.00
+    - extra key = 2.00
+    - late check out = 12.00
+
+Room Status File (26 records for 25 rooms)
+- Range = 101 - 126
+ - rooms
+   - room number
+   - status {
+      if room_is = empty then cust_name = Vacant
+      else room_is = cust_name
+   }
+       
+ - Room Num = 101 ~ 126
+   - 
+ - Customer
+   - name
+   - address
+   - phone number
+   - payment info
+     - cc card
+     - expiry
+     - pre-authorization

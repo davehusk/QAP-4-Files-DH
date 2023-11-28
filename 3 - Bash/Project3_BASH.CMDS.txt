@@ -1,0 +1,131 @@
+Create Files and Add Content:
+
+- Create `PySample.py` with a basic Python code snippet and add the word “RetailCost”:
+
+    echo "def hello_world():" > PySample.py
+    echo " print('Hello, world!')" >> PySample.py
+    echo "RetailCost" >> PySample.py
+
+- Create `Stuff.py` with a Python code snippet and add the word “getName”:
+
+    echo "def get_name():" > Stuff.py
+    echo " return 'Your Name'" >> Stuff.py
+    echo "getName" >> Stuff.py
+
+- Create `ExtraP.txt` and add some text:
+
+    echo "This is a text file with some example text." > ExtraP.txt
+
+
+Create Files and Add Text to Them:
+
+- Create `PySample.py`, `ExtraP.txt`, `Stuff.py` and add specified text:
+    echo "Python code" > PySample.py
+    echo "Python code" > Stuff.py
+    echo "Some text" > ExtraP.txt
+    echo "RetailCost" >> PySample.py
+    echo "getName" >> Stuff.py
+
+
+Working with Directories and Files:
+
+- What is the current directory?
+    pwd
+
+- List the contents of the current directory:
+    ls
+
+- List the contents of the current directory including hidden files:
+    ls -a
+
+- List the files with permissions displayed:
+    ls -l
+
+
+Display File Contents:
+
+- Display the full contents of each of the files created:
+    cat PySample.py ExtraP.txt Stuff.py
+
+- Display only the first 3 lines of `PySample.py`:
+    head -n 3 PySample.py
+
+- Display the last 3 lines of `Stuff.py`:
+    tail -n 3 Stuff.py
+
+- Display the last 3 lines of all files:
+    tail -n 3 PySample.py ExtraP.txt Stuff.py
+
+- For large files, to view one screen at a time:
+    less filename
+
+
+Create Directories and Navigate:
+
+- Create directories and navigate to `PythonDone`:
+    mkdir PythonCurrent PythonDone TextFiles
+    mkdir PythonDone/2022 PythonDone/2023
+    mkdir TextFiles/Python TextFiles/Other
+    cd PythonDone
+    pwd
+    ls
+
+- Navigate to `PythonCurrent`, `2023`, and `Other` directories and prove location:
+    cd ../PythonCurrent
+    pwd
+    cd ../PythonDone/2023
+    pwd
+    cd ../TextFiles/Other
+    pwd
+    cd -
+
+
+Move and Copy Files:
+
+- Move `Stuff.py` to `PythonCurrent` and check:
+    mv Stuff.py PythonCurrent/
+    ls PythonCurrent/
+
+- Copy `ExtraP.txt` to `Python` folder in `TextFiles`:
+    cp ExtraP.txt TextFiles/Python/
+
+
+Working with Files in Different Directories:
+
+- Display first 6 lines of `ExtraP.txt` in `Python` folder:
+    cd TextFiles/Python
+    head -n 6 ExtraP.txt
+    cd -
+
+- Display contents of `ExtraP.txt` from `Python` directory in `PythonDone` directory:
+    cat TextFiles/Python/ExtraP.txt
+
+
+Find File in Subdirectories:
+
+- Find `Stuff.py` in all subdirectories:
+    find . -name "Stuff.py"
+
+
+Change File Permissions:
+
+- Change permissions of `PySample.py` to read and execute only for everyone:
+    chmod 755 PySample.py
+
+
+Find Text in Files and Redirect Output:
+
+- Find `getName` in a file and indicate which file(s) it's located in:
+    grep -r "getName" .
+
+- Find `RetailCost` in a file, ignoring case, and direct output to `FindResults.txt`:
+    grep -ri "RetailCost" . > FindResults.txt
+
+- Append second result to the same file without overwriting:
+    grep -r "SecondSearchTerm" . >> FindResults.txt
+
+
+Perform an Additional Useful Command: - Example command and explanation:
+du -sh \*
+
+    This command displays the disk usage of files and directories in the current directory in a human-readable format (`-h`), showing each item's size. It's beneficial for identifying large files or directories quickly.
